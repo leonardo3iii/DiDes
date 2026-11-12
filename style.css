@@ -1,230 +1,261 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-
-    font-size:18px;
+html {
+    font-size: 18px;
 }
 
-body{
-
-    background:#012456;
-
-    color:#ffffff;
-
-    font-family:
-    Consolas,
-    "Cascadia Code",
-    monospace;
-
-    font-size:18px;
-
-    line-height:1.5;
-
-    padding:12px;
+body {
+    background: #012456;
+    color: #f0f0f0;
+    font-family: Consolas, "Cascadia Code", "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 16px;
+    min-height: 100vh;
 }
 
-.container{
-
-    width:100%;
-
-    max-width:none;
+/* Scrollbar no estilo terminal */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.title{
-
-    text-align:left;
-
-    margin-bottom:25px;
+::-webkit-scrollbar-track {
+    background: #012456;
 }
 
-.title h1{
-
-    font-size:1.6rem;
-
-    font-weight:600;
-
-    margin-bottom:5px;
+::-webkit-scrollbar-thumb {
+    background: #1a5a9e;
+    border-radius: 4px;
 }
 
-.title p{
-
-    color:#9fd2ff;
+::-webkit-scrollbar-thumb:hover {
+    background: #2a7ad4;
 }
 
-.story-card{
-
-    padding:12px 0;
-
-    cursor:pointer;
+.container {
+    width: 100%;
+    max-width: none;
 }
 
-.story-card:hover{
+/* ===== Tela inicial ===== */
 
-    color:#9fd2ff;
+.title {
+    text-align: left;
+    margin-bottom: 28px;
 }
 
-.story-card h3{
-
-    font-size:1.25rem;
-
-    margin-bottom:4px;
+.title h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #ffffff;
 }
 
-.history{
-
-    width:100%;
+.title p {
+    color: #9fd2ff;
 }
 
-.story-block{
-
-    margin-bottom:25px;
+.story-card {
+    padding: 14px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(111, 180, 255, 0.12);
+    transition: color 0.15s ease;
 }
 
-.step-number{
-
-    color:#6bc1ff;
-
-    margin-bottom:10px;
+.story-card:hover {
+    color: #9fd2ff;
 }
 
-.story-text{
-
-    font-size:1.35rem;
-
-    margin-bottom:18px;
+.story-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
-.choice{
-
-    margin-bottom:8px;
+.story-card p {
+    color: #c8e0f8;
+    font-size: 0.95rem;
 }
 
-.choice-label{
-
-    color:#6bc1ff;
+.story-card .status {
+    margin-top: 6px;
+    font-size: 0.9rem;
 }
 
-.answer-line{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    margin-top:20px;
+.story-card .status.continue {
+    color: #ffd866;
 }
 
-.prompt{
-
-    color:#6bc1ff;
-
-    white-space:nowrap;
+.story-card .status.completed {
+    color: #65ff65;
 }
 
-#answer{
+/* ===== Tela do exercício ===== */
 
-    flex:1;
-
-    background:transparent;
-
-    border:none;
-
-    color:white;
-
-    font-size:1.1rem;
-
-    font-family:inherit;
-
-    caret-color:white;
+.history {
+    width: 100%;
+    max-width: 100%;
 }
 
-#answer:focus{
-
-    outline:none;
+.story-block {
+    margin-bottom: 28px;
+    max-width: 100%;
 }
 
-.command-bar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:20px;
-
-    color:#6bc1ff;
+.step-number {
+    color: #6bc1ff;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
 }
 
-.command{
-
-    cursor:pointer;
+.story-text {
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+    color: #ffffff;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
-.command:hover{
-
-    text-decoration:underline;
+.choice {
+    margin-bottom: 9px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    color: #e0e0e0;
 }
 
-.success{
-
-    color:#65ff65;
-
-    margin:10px 0;
+.choice-label {
+    color: #6bc1ff;
+    margin-right: 6px;
 }
 
-.error{
+/* ===== Campo de resposta ===== */
 
-    color:#ff6f6f;
-
-    margin:10px 0;
-}
-.font-controls{
-
-    position:fixed;
-
-    top:12px;
-
-    right:20px;
-
-    display:flex;
-
-    gap:16px;
-
-    z-index:999;
+.answer-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
-.font-button{
-
-    cursor:pointer;
-
-    color:#7dc2ff;
-
-    user-select:none;
+.prompt {
+    color: #6bc1ff;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 500;
 }
 
-.font-button:hover{
-
-    text-decoration:underline;
+#answer {
+    flex: 1;
+    min-width: 120px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-family: inherit;
+    caret-color: #65ff65;
+    outline: none;
 }
 
-.timer-label{
-
-    margin-top:8px;
-
-    color:#7dc2ff;
-
-    font-size:14px;
+#answer:focus {
+    outline: none;
 }
 
-.timer-display{
+#answer:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-    margin-top:4px;
+/* ===== Barra de comandos ===== */
 
-    font-weight:bold;
+.command-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    color: #6bc1ff;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-    color:white;
+.command {
+    cursor: pointer;
+    user-select: none;
+}
+
+.command:hover {
+    text-decoration: underline;
+    color: #9fd2ff;
+}
+
+/* ===== Feedback ===== */
+
+.success {
+    color: #65ff65;
+    margin: 12px 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.error {
+    color: #ff6f6f;
+    margin: 12px 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ===== Controles de fonte + timer ===== */
+
+.font-controls {
+    position: fixed;
+    top: 14px;
+    right: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    z-index: 999;
+    background: rgba(1, 36, 86, 0.85);
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.font-button {
+    cursor: pointer;
+    color: #7dc2ff;
+    user-select: none;
+    font-size: 1rem;
+}
+
+.font-button:hover {
+    text-decoration: underline;
+    color: #a8d8ff;
+}
+
+.timer-label {
+    margin-top: 2px;
+    color: #7dc2ff;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.timer-display {
+    margin-top: 2px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Seleção de texto no estilo terminal ===== */
+::selection {
+    background: #1a5a9e;
+    color: #ffffff;
 }
