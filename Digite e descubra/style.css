@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    font-size:18px;
+}
+
+body{
+
+    background:#012456;
+
+    color:#ffffff;
+
+    font-family:
+    Consolas,
+    "Cascadia Code",
+    monospace;
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    padding:12px;
+}
+
+.container{
+
+    width:100%;
+
+    max-width:none;
+}
+
+.title{
+
+    text-align:left;
+
+    margin-bottom:25px;
+}
+
+.title h1{
+
+    font-size:1.6rem;
+
+    font-weight:600;
+
+    margin-bottom:5px;
+}
+
+.title p{
+
+    color:#9fd2ff;
+}
+
+.story-card{
+
+    padding:12px 0;
+
+    cursor:pointer;
+}
+
+.story-card:hover{
+
+    color:#9fd2ff;
+}
+
+.story-card h3{
+
+    font-size:1.25rem;
+
+    margin-bottom:4px;
+}
+
+.history{
+
+    width:100%;
+}
+
+.story-block{
+
+    margin-bottom:25px;
+}
+
+.step-number{
+
+    color:#6bc1ff;
+
+    margin-bottom:10px;
+}
+
+.story-text{
+
+    font-size:1.35rem;
+
+    margin-bottom:18px;
+}
+
+.choice{
+
+    margin-bottom:8px;
+}
+
+.choice-label{
+
+    color:#6bc1ff;
+}
+
+.answer-line{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:20px;
+}
+
+.prompt{
+
+    color:#6bc1ff;
+
+    white-space:nowrap;
+}
+
+#answer{
+
+    flex:1;
+
+    background:transparent;
+
+    border:none;
+
+    color:white;
+
+    font-size:1.1rem;
+
+    font-family:inherit;
+
+    caret-color:white;
+}
+
+#answer:focus{
+
+    outline:none;
+}
+
+.command-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:20px;
+
+    color:#6bc1ff;
+}
+
+.command{
+
+    cursor:pointer;
+}
+
+.command:hover{
+
+    text-decoration:underline;
+}
+
+.success{
+
+    color:#65ff65;
+
+    margin:10px 0;
+}
+
+.error{
+
+    color:#ff6f6f;
+
+    margin:10px 0;
+}
+.font-controls{
+
+    position:fixed;
+
+    top:12px;
+
+    right:20px;
+
+    display:flex;
+
+    gap:16px;
+
+    z-index:999;
+}
+
+.font-button{
+
+    cursor:pointer;
+
+    color:#7dc2ff;
+
+    user-select:none;
+}
+
+.font-button:hover{
+
+    text-decoration:underline;
+}
+
+.timer-label{
+
+    margin-top:8px;
+
+    color:#7dc2ff;
+
+    font-size:14px;
+}
+
+.timer-display{
+
+    margin-top:4px;
+
+    font-weight:bold;
+
+    color:white;
+}
