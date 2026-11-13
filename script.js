@@ -177,7 +177,7 @@ function getPrompt() {
         .replace(/🏨|👻|🔑|📖/g, "")
         .trim();
 
-    return `PS C:\\${title}>`;
+    return `PS C:\\DiDes\\${title}>`;
 }
 
 /* ====================== TELAS ====================== */
@@ -196,7 +196,7 @@ function renderHome() {
             <span class="font-button" onclick="increaseFont()">A+</span>
         </div>
         <div class="title">
-            <h1>PS C:</h1>
+            <h1>PS C:\\DiDes</h1>
             <p>Selecione uma história</p>
         </div>
     `;
@@ -420,7 +420,7 @@ function checkAnswer() {
                     <br><br>
                     ✅ ${correctSentences} frases corretas
                     <br><br>
-                    📝 ${typedWords} palavras digitadas corretamente
+                    📝 ${typedWords} palavras digitadas
                     <br><br>
                     ⏱ ${formatPracticeTime(practiceSeconds)} de prática
                 </div>
