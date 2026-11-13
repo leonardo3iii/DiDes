@@ -171,13 +171,13 @@ function focusInput() {
 }
 
 function getPrompt() {
-    if (!currentStory) return "PS C:\\DiDes\Historias>";
+    if (!currentStory) return "PS C:\\DiDes>";
 
     const title = currentStory.title
         .replace(/🏨|👻|🔑|📖/g, "")
         .trim();
 
-    return `PS C:\\DiDes\Historias\\${title}>`;
+    return `PS C:\\${title}>`;
 }
 
 /* ====================== TELAS ====================== */
@@ -196,7 +196,7 @@ function renderHome() {
             <span class="font-button" onclick="increaseFont()">A+</span>
         </div>
         <div class="title">
-            <h1>PS C:\\DiDes\Historias</h1>
+            <h1>PS C:</h1>
             <p>Selecione uma história</p>
         </div>
     `;
